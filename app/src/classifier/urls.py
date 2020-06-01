@@ -18,5 +18,5 @@ from django.urls import path
 import backend.views
 
 urlpatterns = [
-    path('/analize', backend.views.process_review, name='Analize API'),
+    path('analize', backend.views.process_review, name='Analize API'),
 ]
