@@ -1,0 +1,26 @@
+<head>
+  <title>Reviews analizer</title>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <p>Enter your review:<br>
+  <textarea id="review" rows=10 cols=45></textarea>
+  </p>
+  <select id="model">
+    <option selected="selected" value="logistic">Logistic</option>
+    <option value="logistic_sum">Logistic with modification</option>
+    <option value="svm">SVM</option>
+    <option value="svm_sum">SVM with modification</option>
+  </select>
+  <input type="button" value="Submit" onclick="submit()">
+  <div id="result">
+    <p id="sentiment"></p>
+    <p id="rating"></p>
+    <p id="error"></p>
+  </div>
+  <div id="loader" style="display:none">
+    Loading...
+    <div class="loader"></div>
+  </div>
+</body>

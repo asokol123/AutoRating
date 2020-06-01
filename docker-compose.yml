@@ -1,0 +1,19 @@
+version: '2.4'
+
+services:
+  app:
+    build: app
+    restart: on-failure
+    volumes:
+      - ./app/src/:/app
+    pids_limit: 256
+
+  nginx:
+    depends_on:
+      - app
+    image: nginx:alpine
+    ports:
+      - 8000:8000
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./app/src/static:/static
